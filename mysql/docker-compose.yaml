@@ -4,10 +4,10 @@ services:
 
   db:
     image: mysql:5.7
-    restart: always
+    restart: on-failure
     environment:
-        - MYSQL_ROOT_PASSWORD=123456
+      MYSQL_ROOT_PASSWORD: 123456
     ports:
-        - 3306:3306
-    volumes: 
-        - ./data:/var/lib/mysql
+      - 3306:3306
+    volumes:
+      - ./data:/var/lib/mysql
