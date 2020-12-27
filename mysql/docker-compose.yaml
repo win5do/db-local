@@ -3,8 +3,8 @@ version: "3.7"
 services:
   db:
     image: mysql:5.7
-    # https://docs.docker.com/compose/compose-file/#restart
-    restart: unless-stopped
+    # https://docs.docker.com/compose/compose-file/compose-file-v3/#restart
+    restart: on-failure
     environment:
       MYSQL_ROOT_PASSWORD: 123456
     ports:
