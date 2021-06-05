@@ -1,0 +1,1 @@
+mkdir -p ./data/data ./data/logs ./data/config ./data/runner-config
