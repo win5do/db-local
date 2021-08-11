@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  db:
+    image: coredns/coredns
+    restart: on-failure
+    ports:
+      - 1053:1053
+      - 1053:1053/udp
+    volumes:
+      - ./Corefile:/Corefile
