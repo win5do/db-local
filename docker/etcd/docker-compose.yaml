@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  db:
+  etcd:
     image: bitnami/etcd:3
     restart: on-failure
     ports:
