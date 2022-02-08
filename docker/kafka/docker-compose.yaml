@@ -7,7 +7,7 @@ services:
     ports:
       - "2181:2181"
     volumes:
-      - "./zk-data:/bitnami"
+      - "./data/zk:/bitnami"
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
   kafka:
@@ -15,7 +15,7 @@ services:
     ports:
       - "9092:9092"
     volumes:
-      - "./kafka-data:/bitnami"
+      - "./data/kafka:/bitnami"
     environment:
       - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
       - ALLOW_PLAINTEXT_LISTENER=yes

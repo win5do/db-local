@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  nacos:
+    image: nacos/nacos-server:1.4.2
+    container_name: nacos-standalone
+    environment:
+    - PREFER_HOST_MODE=hostname
+    - MODE=standalone
+    volumes:
+    - ./data/logs/:/home/nacos/logs
+    - ./data/init.d/custom.properties:/home/nacos/init.d/custom.properties
+    ports:
+    - "8848:8848" # http
+    - "9848:9848" # 2.0 新增 grpc 端口
