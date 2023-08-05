@@ -4,7 +4,7 @@ services:
   db:
     image: mysql:5.7
     # https://docs.docker.com/compose/compose-file/compose-file-v3/#restart
-    restart: on-failure
+    restart: no
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_ROOT_HOST: "%"
@@ -13,4 +13,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./data:/var/lib/mysql
+      - mysqldata:/var/lib/mysql
+
+volumes:
+  mysqldata:
