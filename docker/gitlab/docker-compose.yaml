@@ -10,8 +10,8 @@ services:
         external_url 'http://host.docker.internal'
         # Add any other gitlab.rb configuration here, each on its own line
     ports:
-      - 80:80
-      - 22:22
+      - "80:80"
+      - "22:22"
     volumes:
       - ./data/logs:/var/log/gitlab
       - ./data/data:/var/opt/gitlab
