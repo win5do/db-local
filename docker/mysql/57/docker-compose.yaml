@@ -3,8 +3,7 @@ version: "3"
 services:
   db:
     image: mysql:5.7
-    platform: linux/amd64 # 5.7 没有 arm 镜像
-    # https://docs.docker.com/compose/compose-file/compose-file-v3/#restart
+    platform: linux/amd64 # 5.7 没有 arm 镜像，mac podman 无法启动
     restart: no
     environment:
       MYSQL_ROOT_PASSWORD: password
