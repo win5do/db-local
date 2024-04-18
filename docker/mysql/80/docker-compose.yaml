@@ -7,6 +7,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_ROOT_HOST: "%"
+      # sql_mode: rm ONLY_FULL_GROUP_BY
+      # 8.0 相较于 5.7 移除了 NO_AUTO_CREATE_USER 参数，需要去掉
+    command: --sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
     ports:
       - "3306:3306"
     volumes:
